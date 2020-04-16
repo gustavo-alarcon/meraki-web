@@ -1,0 +1,220 @@
+#ms_background {
+  position: absolute;
+  height: 55vh;
+  top: -2px;
+  left: -20%;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(0, 0, 0, 0.2);
+  transform: skew(0deg, -40deg);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ms-title-container img {
+  -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  filter: drop-shadow(5px 5px 5px #222);
+  width: 50vw;
+}
+
+.ms-image-container {
+  position: absolute;
+  top: 0%;
+  left: 45%;
+  z-index: -1;
+}
+
+.ms-image {
+  background-image: url('../../assets/images/app-white.jpg');
+  height: 100vh;
+  width: 45vw;
+  min-width: 230px;
+  /* background-attachment: fixed; */
+  background-position-x: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.ms-nav-container {
+  position: absolute;
+  width: 85vw;
+  top: 90%;
+  transition: ease-in 0.5s;
+}
+
+.ms-nav-container nav {
+  display: flex;
+  justify-content: space-around;
+  transition: ease-in 1s;
+}
+
+.ms-nav-container nav li {
+  list-style-type: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2em;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: ease-in 0.5s;
+}
+
+.ms-nav-container nav li:hover {
+  color: var(--color-link-hover);
+}
+
+.ms-nav-container-scroll {
+  position: fixed;
+  width: 85vw;
+  top: 2%;
+  background-color: #140B12;
+  padding: 1em 1em;
+  border-radius: 10px 10px;
+  z-index: 999;
+  opacity: 0;
+  transition: ease-in 0.5s;
+}
+
+.ms-nav-container-scroll nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: ease-in 1s;
+}
+
+.ms-nav-container-scroll nav li {
+  list-style-type: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2em;
+  color: var(--color-secondary);
+  cursor: pointer;
+  margin-right: 2em;
+  transition: ease-in 0.5s;
+}
+
+.ms-nav-container-scroll nav li:hover {
+  color: var(--color-link-hover);
+}
+
+/* APPLICATIONS */
+
+#ms_bg_applications {
+  position: fixed;
+  top: 50%
+}
+
+#ms_applications_content h2 {
+  position: absolute;
+  top: 110%;
+  z-index: -1;
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 288px;
+  line-height: 288px;
+  color: rgba(20, 11, 18, 0.5);
+}
+
+#ms_applications_content div{
+  position: absolute;
+  top: 110%;
+}
+
+
+#ms_applications_content div h3{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #424242;
+}
+
+#ms_applications_content div p{
+  font-size: 1.2em;
+}
+
+#ms_applications_p{
+  width: 50%;
+}
+
+#ms_applications_p img{
+  position: relative;
+  left: 20%;
+}
+
+#ms_applications_animation{
+  position: absolute;
+  top: 110%;
+  left: 60%;
+}
+
+#ms_applications_projects {
+  position: absolute;
+  top: 180% !important;
+  width: 100%;
+}
+
+#ms_applications_content div div h3{
+  position: absolute;
+  z-index: -1;
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10em;
+  line-height: 288px;
+  color: rgba(20, 11, 18, 0.5);
+}
+
+#ms_applications_content div div ul{
+  margin-top: 5em;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 28px;
+  padding: 0px 0px;
+  color: var(--color-text);
+}
+
+#ms_applications_content div div ul li{
+  list-style: none;
+  margin-bottom: 1em;
+  color: transparent;
+  -webkit-text-stroke-color: #424242;
+  -webkit-text-stroke-width: 1px;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+}
+
+#ms_applications_content div div ul li span{
+  font-size: 0.6em !important;
+  opacity: 0;
+  vertical-align: middle !important;
+  transition: ease-in 0.3s;
+}
+
+#ms_applications_content div div ul li:hover span{
+  opacity: 1;
+}
+
+#ms_applications_content div div ul li:hover{
+  -webkit-text-stroke-width: 0px;
+  color: var(--color-primary);
+}
+
+@media(max-width:600px) {
+  #ms_applications_content div div ul{
+    font-size: 1em;
+    
+  }
+
+  #ms_applications_content div div ul li{
+    color: var(--color-primary);
+    -webkit-text-stroke-width: 0px;
+  }
+  
+  #ms_applications_projects {
+    top: 250% !important;
+  }
+}

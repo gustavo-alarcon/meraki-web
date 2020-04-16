@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    --color-text: #424242;
+    --color-bg: #ffffff;
+    --color-link: #999;
+    --color-link-hover: #fff;
+    --color-primary: #EEFE34;
+    --color-secondary: #EEFE34;
+    --color-description: #3b343a;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ms-title-container {
+    position: absolute;
+    top: 25%;
+}
+
+.ms-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10vw;
+    line-height: 1;
+    margin: 5vw 0 0 0;
+    color: var(--color-primary);
+}
+
+.ms-slogan-container {
+    position: absolute;
+    top: 20vh;
+    left: 35%;
+}
+
+.ms-slogan {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--color-primary);
+}
+
+.ms-quote-container {
+    position: absolute;
+    top: 70%;
+}
+
+.ms-quote-container p{
+    font-size: 1.2em;
+}
+
+@media(max-width:600px) {
+    .ms-slogan-container {
+        position: absolute;
+        top: 15vh;
+        left: 30%;
+    }
+
+    .ms-title-container {
+        position: absolute;
+        top: 30%;
+    }
+
+    .ms-title {
+        font-size: 12vw;
+    }
+}
