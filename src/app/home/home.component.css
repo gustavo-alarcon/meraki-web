@@ -1,161 +1,200 @@
-#ms_background {
+.landing {
+  position: relative;
+  height: 100vh;
+  /* border: solid 1px blue; */
+}
+
+/* PARTNER */
+
+.container-partner {
+  /* border: solid 1px red; */
+  position: relative;
+  margin-top: 5%;
+}
+
+.container-partner img {
+  height: 10vh;
+  padding-right: 1em;
+}
+
+/* BACKGROUND */
+
+.bg {
   position: absolute;
   height: 55vh;
-  top: -2px;
-  left: -20%;
-  right: -2px;
-  bottom: -2px;
+  width: 100%;
+  left: -25%;
   background: rgba(0, 0, 0, 0.2);
   transform: skew(0deg, -40deg);
   z-index: -1;
-  overflow: hidden;
 }
 
-.ms-title-container img {
+/* TITLE */
+
+.container-title {
+  position: relative;
+  /* border: solid 1px green; */
+  height: 70vh;
+}
+
+.container-title p:nth-of-type(1){
+  position: absolute;
+  top: 20%;
+  left:  50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 1.7em;
+  background: -webkit-linear-gradient(left, #222222, rgba(43, 43, 43, 0));
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-stroke-color: #cccccc;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+.container-title img{
+  position: absolute;
+  top: 40%;
   -webkit-filter: drop-shadow(5px 5px 5px #222 );
   filter: drop-shadow(5px 5px 5px #222);
-  width: 50vw;
+  width: 45vw;
+  min-width: 300px;
+}
+
+.container-title p:nth-of-type(2) {
+  position: absolute;
+  top: 68%;
+  width: 50%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: #5f6368;
+}
+
+.container-title p:nth-of-type(3) {
+  position: absolute;
+  top: 78%;
+  width: 50%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: #5f6368;
 }
 
 .ms-image-container {
   position: absolute;
   top: 0%;
-  left: 45%;
+  left: 50%;
   z-index: -1;
+  -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 .ms-image {
   background-image: url('../../assets/images/app-white.jpg');
   height: 100vh;
-  width: 45vw;
-  min-width: 230px;
-  /* background-attachment: fixed; */
+  width: 40vw;
+  min-width: 188px;
   background-position-x: 70%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  transition: ease-in 1s;
 }
 
-.ms-nav-container {
+/* NAVBAR */
+
+.container-nav-landing {
   position: absolute;
-  width: 85vw;
-  top: 90%;
-  transition: ease-in 0.5s;
+  width: 66vw;
+  /* transition: 1s; */
 }
 
-.ms-nav-container nav {
+.container-nav-landing nav{
   display: flex;
-  justify-content: space-around;
-  transition: ease-in 1s;
-}
-
-.ms-nav-container nav li {
-  list-style-type: none;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2em;
-  color: var(--color-secondary);
-  cursor: pointer;
-  transition: ease-in 0.5s;
-}
-
-.ms-nav-container nav li:hover {
-  color: var(--color-link-hover);
-}
-
-.ms-nav-container-scroll {
-  position: fixed;
-  width: 85vw;
-  top: 2%;
-  background-color: #140B12;
-  padding: 1em 1em;
-  border-radius: 10px 10px;
-  z-index: 999;
-  opacity: 0;
-  transition: ease-in 0.5s;
-}
-
-.ms-nav-container-scroll nav {
-  display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: center;
-  transition: ease-in 1s;
+  padding: 1.2em 1em;
+  border-radius: 10px 10px;
+  background-color: #0e0e0e;
+  -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  filter: drop-shadow(5px 5px 5px #222);
+  /* transition: ease-in-out 1s; */
 }
 
-.ms-nav-container-scroll nav li {
-  list-style-type: none;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2em;
-  color: var(--color-secondary);
+.container-nav-landing nav li{
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #5f6368;
+  transition: ease-in 0.3s;
+}
+
+.container-nav-landing nav li:hover{
+  /* border-bottom: 2px solid #5f6368; */
+  width: fit-content;
+  font-weight: 900;
+  background-color: white;
+  padding: 0.1em 0.5em;
+  border-radius: 5px;
+  color: #111111;
   cursor: pointer;
-  margin-right: 2em;
-  transition: ease-in 0.5s;
 }
 
-.ms-nav-container-scroll nav li:hover {
-  color: var(--color-link-hover);
+#nav_logo {
+  position: absolute;
+  left: 0;
+  display: none;
+  transition: ease-in 0.5s;
 }
 
 /* APPLICATIONS */
 
-#ms_bg_applications {
-  position: fixed;
-  top: 50%
-}
-
-#ms_applications_content h2 {
-  position: absolute;
-  top: 110%;
-  z-index: -1;
-  font-family: Josefin Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 288px;
-  line-height: 288px;
-  color: rgba(20, 11, 18, 0.5);
-}
-
-#ms_applications_content div{
-  position: absolute;
-  top: 110%;
-}
-
-
-#ms_applications_content div h3{
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-
-  color: #424242;
-}
-
-#ms_applications_content div p{
-  font-size: 1.2em;
-}
-
-#ms_applications_p{
-  width: 50%;
-}
-
-#ms_applications_p img{
+#app_content {
   position: relative;
-  left: 20%;
+  /* border: solid 1px red; */
+  min-height: 100vh;
 }
 
-#ms_applications_animation{
+#app_content .app-bg {
   position: absolute;
-  top: 110%;
-  left: 60%;
+  top: 0%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30vh;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  /* border: solid 1px blue; */
+  
 }
 
-#ms_applications_projects {
+#app_content #app_text {
   position: absolute;
-  top: 180% !important;
+  margin-top: 20%;
+  width: 50%;
+  /* border: solid 1px green; */
+}
+
+#app_content #app_image {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+#app_content #app_image img {
   width: 100%;
 }
 
-#ms_applications_content div div h3{
+/* APP PROJECTS */
+
+#app_projects {
+  position: absolute;
+  top: 110%;
+  /* border: solid 1px blue; */
+}
+
+#app_projects .app-projects-bg{
   position: absolute;
   z-index: -1;
   font-family: Josefin Sans;
@@ -166,47 +205,46 @@
   color: rgba(20, 11, 18, 0.5);
 }
 
-#ms_applications_content div div ul{
+#app_projects_list {
+  position: relative;
+  left: -5%;
   margin-top: 5em;
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 2.5em;
-  line-height: 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 2em;
   padding: 0px 0px;
   color: var(--color-text);
 }
 
-#ms_applications_content div div ul li{
+#app_projects_list li {
   list-style: none;
   margin-bottom: 1em;
   color: transparent;
-  -webkit-text-stroke-color: #424242;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #bdbcbc;
+  -webkit-text-stroke-width: 0.6px;
   cursor: pointer;
   transition: ease-in 0.3s;
 }
 
-#ms_applications_content div div ul li span{
+#app_projects_list li span {
   font-size: 0.6em !important;
   opacity: 0;
   vertical-align: middle !important;
   transition: ease-in 0.3s;
 }
 
-#ms_applications_content div div ul li:hover span{
+#app_projects_list li:hover span{
   opacity: 1;
 }
 
-#ms_applications_content div div ul li:hover{
+#app_projects_list li:hover{
   -webkit-text-stroke-width: 0px;
-  color: var(--color-primary);
+  color: #f8bb16;
 }
 
 @media(max-width:600px) {
-  #ms_applications_content div div ul{
+  #app_projects_list {
     font-size: 1em;
-    
   }
 
   #ms_applications_content div div ul li{
@@ -216,5 +254,34 @@
   
   #ms_applications_projects {
     top: 250% !important;
+  }
+}
+
+@media(max-width:600px) {
+  .container-title p:nth-of-type(1){
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    width: 100%;
+  }
+
+  .container-title img{
+    top: 30vh;
+    width: 100%
+  }
+
+  .container-nav-landing {
+    width: 82vw;
+  }
+
+  /* APP */
+  #app_content .app-bg {
+    font-size: 20vh;
+  }
+
+  #app_content #app_text {
+    margin-top: 15%;
+    width: 100%;
   }
 }
