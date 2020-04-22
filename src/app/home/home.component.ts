@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import * as AOS from 'aos';
 
@@ -15,15 +15,41 @@ export class HomeComponent implements OnInit {
 
   content: string = 'app';
 
+  app_proj_image: any;
+
+  appProjects: Array<string> = [
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame-blur.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+    'url(../../assets/images/projects-frame.jpg)',
+  ]
+
   constructor() {
 
   }
 
   ngOnInit() {
-
     AOS.init();
+  }
 
-    let background = document.getElementsByClassName('bg')[0];
+  ngAfterViewInit() {
+    
+
+    // let background: HTMLElement = document.getElementsByClassName('bg')[0];
     let image_container = document.getElementById('ms_image_container');
 
     this.image = document.getElementById('ms_image');
@@ -33,11 +59,9 @@ export class HomeComponent implements OnInit {
 
     let navbar_small = document.getElementById('nav_landing_small');
 
-    // let app_content = document.getElementById('ms_applications_p');
+    this.app_proj_image = document.getElementById('app_projects_image');
 
-    let app_project_list = document.getElementById('ms_applications_project_list');
-
-    console.log(innerWidth, innerHeight);
+    // let app_project_list = document.getElementById('ms_applications_project_list');
 
     window.addEventListener('scroll', () => {
       this.scrollValue = window.scrollY;
@@ -78,13 +102,20 @@ export class HomeComponent implements OnInit {
         navbar_small.style.position = 'relative';
 
       }
+
+      // For projects
+      if (this.scrollValue >= (winHeight * 1.8)) {
+        this.app_proj_image.style.top = (this.scrollValue- winHeight * 1.8) + 'px';
+      } else {
+        this.app_proj_image.style.position = 'absolute';
+      }
     })
 
     window.addEventListener('mousemove', e => {
       let valueX = e.clientX;
       let valueY = e.clientY;
 
-      this.image.style.backgroundPositionX = 70 + (valueX / window.innerWidth) * 10 + '%';
+      // this.image.style.backgroundPositionX = 70 + (valueX / window.innerWidth) * 10 + '%';
 
       // background.style.left = -15 + (valueX / window.innerWidth) * 4 + '%';
       // background.style.top = 0 + (valueY/window.innerWidth) * -8 + '%';
@@ -94,7 +125,7 @@ export class HomeComponent implements OnInit {
   changeTopic(topic: string): void {
 
     if (topic == 'app') {
-      this.image.style.backgroundImage = 'url(../../assets/images/app-white.jpg)';
+      this.image.style.backgroundImage = 'url(../../assets/images/app-white.webp)';
       this.content = 'app';
     }
 
@@ -118,6 +149,10 @@ export class HomeComponent implements OnInit {
       this.content = 'i2ot';
     }
 
+  }
+
+  changeAppProjectImage(index: number) {
+    this.app_proj_image.style.backgroundImage = this.appProjects[index];
   }
 
 

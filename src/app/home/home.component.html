@@ -5,8 +5,10 @@
   <div class="w3-col s10 m10 l8" style="height:100vh">
     <div class="landing">
       <div class="container-partner" data-aos="fade-left">
-        <img src="../../assets/images/partner.png" alt="google cloud partner">
-        <img src="../../assets/images/green-tag-2.png" alt="green geeks partner">
+        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank"><img
+            src="../../assets/images/partner.webp" alt="google cloud partner"></a>
+        <a href="https://greengeeks.com/track/merakisolutions" target="_blank"><img
+            src="../../assets/images/green-tag-2.webp" alt="green geeks partner"></a>
       </div>
       <div class="bg"></div>
       <div class="container-title" data-aos="fade-up" data-aos-duration="1000">
@@ -15,7 +17,7 @@
         <p class="w3-hide-small">"Para situaciones sin precedentes, se necesitan soluciones sin precedentes"</p>
         <p class="w3-hide-small">- María Antonieta Alva, Ministra de Economia, Perú</p>
       </div>
-      <div id="ms_image_container" class="ms-image-container" data-aos="fade-right">
+      <div id="ms_image_container" class="ms-image-container" data-aos="fade-right" data-aos-duration="1000">
         <div id="ms_image" class="ms-image"></div>
       </div>
 
@@ -70,41 +72,55 @@
 
           Así que todos nuestros proyectos han sido desarrollados utilizando el ecosistema de Google Cloud.</p>
 
-        <img src="../../assets//images/google cloud.png" alt="google cloud services" style="width: 100%;">
+        <img src="../../assets//images/google cloud.webp" alt="google cloud services">
 
         <p style="margin: 3em 0;">Y sus principales frameworks para programadores.</p>
 
-        <img src="../../assets//images/frameworks.png" alt="google cloud services" style="width: 80%;">
+        <img src="../../assets//images/frameworks.webp" alt="google cloud services">
       </div>
 
 
       <div id="app_image" class="w3-hide-small" data-aos="fade-up" data-aos-duration="1000">
-        <img src="../../assets/images/google-pixel.png" alt="app image" style="width: 100%;">
+        <img src="../../assets/images/google-pixel.webp" alt="app image" style="width: 100%;">
       </div>
 
       <div id="app_projects" data-aos="fade-up" data-aos-duration="2000">
         <h2 class="app-bg">Works</h2>
         <ul id="app_projects_list">
-          <li><span>001</span> Sistema de gestión CRC La Joya</li>
-          <li><span>002</span> Gestión de herramientas - TMM</li>
-          <li><span>003</span> Visualizador de utilización - TMM</li>
-          <li><span>004</span> Realidad Aumentada Utilización- TMM</li>
-          <li><span>005</span> Generador de tarjetas - RTD</li>
-          <li><span>006</span> Gestión de almacenes - FDS</li>
-          <li><span>007</span> Gestión de almacenes - WIP</li>
-          <li><span>008</span> Gestión de almacenes - Utillajes</li>
-          <li><span>009</span> Gestión de lavado interno</li>
-          <li><span>010</span> Control de standard jobs - CRC</li>
-          <li><span>012</span> Aplicación Runner - Logística</li>
-          <li><span>013</span> Predicción de demanda anual - TMM</li>
-          <li><span>014</span> Predicción de demanda semanal - TMM</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>017</span> Delivery Mandaditos Arequipa</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>016</span> Control de standard jobs</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>015</span> Almacenes utillajes</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>014</span> Almacenes WIP</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>013</span> Gestión de lavado interno</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>012</span> Predictor de demanda semanal</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>011</span> Realidad Aumentada Utilización</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>010</span> Aplicación Runner</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>009</span> Almacenes fuera de servicio</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>008</span> Predictor de demanda anual</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>007</span> Generador de tarjetas</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>006</span> Gestión de herramientas</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>005</span> Utilización de equipos</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>004</span> Sistema ERP Interiores</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>003</span> Sistema de gestión CRC La Joya</li>
+          <li (mouseenter)="changeAppProjectImage(1)"><span>002</span> MS Softinvent</li>
+          <li (mouseenter)="changeAppProjectImage(0)"><span>001</span> MS Softhotel</li>
         </ul>
+
+        <div id="app_projects_image">
+          <!-- <img src="../../assets/images/projects-frame.jpg" alt="project image"> -->
+        </div>
+
       </div>
+
+
+
+
+
 
     </div>
 
 
-    <div id="ms_big_data_content">
+    <div id="bd_content" *ngIf="content === 'bd'">
       Hola Big Data
     </div>
     <!--
