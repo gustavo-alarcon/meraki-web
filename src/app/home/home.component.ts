@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as AOS from 'aos';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -15,31 +16,7 @@ export class HomeComponent implements OnInit {
 
   content: string = 'app';
 
-  app_proj_image: any;
-
-  appProjects: Array<string> = [
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame-blur.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-    'url(../../assets/images/projects-frame.jpg)',
-  ]
-
   constructor() {
-
   }
 
   ngOnInit() {
@@ -48,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit() {
     
-
-    // let background: HTMLElement = document.getElementsByClassName('bg')[0];
     let image_container = document.getElementById('ms_image_container');
 
     this.image = document.getElementById('ms_image');
@@ -59,9 +34,9 @@ export class HomeComponent implements OnInit {
 
     let navbar_small = document.getElementById('nav_landing_small');
 
-    this.app_proj_image = document.getElementById('app_projects_image');
+    
 
-    // let app_project_list = document.getElementById('ms_applications_project_list');
+    console.log(window.innerWidth, window.innerHeight);
 
     window.addEventListener('scroll', () => {
       this.scrollValue = window.scrollY;
@@ -71,7 +46,7 @@ export class HomeComponent implements OnInit {
 
       if (this.scrollValue >= (winHeight * 0.85)) {
         navbar.style.position = 'fixed';
-        navbar.style.top = '3%'
+        navbar.style.top = '0%'
         navbar.style.width = '66vw';
         navbar.style.zIndex = '100';
 
@@ -79,19 +54,9 @@ export class HomeComponent implements OnInit {
         nav_logo.style.display = 'block'
 
         navbar_small.style.position = 'fixed';
-        navbar_small.style.top = '2%';
+        navbar_small.style.top = '0%';
         navbar_small.style.width = '82vw';
         navbar_small.style.zIndex = '100';
-
-
-
-        // app_content.style.top = window.innerHeight*0.9 + (this.scrollValue * 0.15) + 'px';
-
-        // navbarSCroll.setAttribute('data-aos', 'fade-down');
-
-
-
-        // app_project_list.style.top = window.innerHeight*1.2 + (this.scrollValue * 0.2) + 'px';
 
       } else {
         navbar.style.position = 'relative';
@@ -102,59 +67,31 @@ export class HomeComponent implements OnInit {
         navbar_small.style.position = 'relative';
 
       }
-
-      // For projects
-      if (this.scrollValue >= (winHeight * 1.8)) {
-        this.app_proj_image.style.top = (this.scrollValue- winHeight * 1.8) + 'px';
-      } else {
-        this.app_proj_image.style.position = 'absolute';
-      }
-    })
-
-    window.addEventListener('mousemove', e => {
-      let valueX = e.clientX;
-      let valueY = e.clientY;
-
-      // this.image.style.backgroundPositionX = 70 + (valueX / window.innerWidth) * 10 + '%';
-
-      // background.style.left = -15 + (valueX / window.innerWidth) * 4 + '%';
-      // background.style.top = 0 + (valueY/window.innerWidth) * -8 + '%';
     })
   }
 
   changeTopic(topic: string): void {
 
     if (topic == 'app') {
-      this.image.style.backgroundImage = 'url(../../assets/images/app-white.webp)';
+      this.image.style.backgroundImage = 'url(../../assets/images/app-white.jpg)';
       this.content = 'app';
     }
 
     if (topic == 'bd') {
-      this.image.style.backgroundImage = 'url(../../assets/images/bigdata-white.jpg)';
+      this.image.style.backgroundImage = 'url(../../assets/images/bd-white.jpg)';
       this.content = 'bd';
     }
 
-    if (topic == 'ml') {
-      this.image.style.backgroundImage = 'url(../../assets/images/ml-white.jpeg)';
-      this.content = 'ml';
-    }
-
     if (topic == 'web') {
-      this.image.style.backgroundImage = 'url(../../assets/images/website-white.jpg)';
+      this.image.style.backgroundImage = 'url(../../assets/images/web-white.jpg)';
       this.content = 'web';
     }
 
     if (topic == 'i2ot') {
-      this.image.style.backgroundImage = 'url(../../assets/images/iot-white.jpg)';
+      this.image.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
       this.content = 'i2ot';
     }
 
   }
-
-  changeAppProjectImage(index: number) {
-    this.app_proj_image.style.backgroundImage = this.appProjects[index];
-  }
-
-
 
 }

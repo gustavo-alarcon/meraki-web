@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "meraki-solutions-web"
+  },
+  "targets": {
+    "mandaditos-e6b53": {
+      "hosting": {
+        "meraki-web": [
+          "mandaditos-e6b53"
+        ]
+      }
+    }
   }
 }

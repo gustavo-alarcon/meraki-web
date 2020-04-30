@@ -6,7 +6,9 @@ import { ApplicationsComponent } from './applications.component';
 
 
 @NgModule({
-  declarations: [ApplicationsComponent],
+  declarations: [
+    ApplicationsComponent
+  ],
   imports: [
     CommonModule,
     ApplicationsRoutingModule

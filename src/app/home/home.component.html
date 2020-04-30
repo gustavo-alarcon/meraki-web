@@ -5,31 +5,35 @@
   <div class="w3-col s10 m10 l8" style="height:100vh">
     <div class="landing">
       <div class="container-partner" data-aos="fade-left">
-        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank"><img
-            src="../../assets/images/partner.webp" alt="google cloud partner"></a>
-        <a href="https://greengeeks.com/track/merakisolutions" target="_blank"><img
-            src="../../assets/images/green-tag-2.webp" alt="green geeks partner"></a>
+        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank" rel="noopener"><img
+            src="../../assets/images/partner.png" alt="google cloud partner"></a>
+        <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
+            src="../../assets/images/green-tag-2.png" alt="green geeks partner"></a>
       </div>
       <div class="bg"></div>
       <div class="container-title" data-aos="fade-up" data-aos-duration="1000">
         <p>Un aliado en soluciones tecnológicas</p>
         <img src="../../assets/images/letters.svg" alt="meraki solutions logo">
-        <p class="w3-hide-small">"Para situaciones sin precedentes, se necesitan soluciones sin precedentes"</p>
-        <p class="w3-hide-small">- María Antonieta Alva, Ministra de Economia, Perú</p>
+        <p>La tecnología es una ciencia, pero conseguir que las personas la usen es un arte </p>
+        <p style="color: #f8bb16; margin-top: 2em;"><small>Mike Arauz</small></p>
+        <!-- <p class="w3-hide-small">"Para situaciones sin precedentes, se necesitan soluciones sin precedentes"</p>
+        <p class="w3-hide-small">- María Antonieta Alva, Ministra de Economia, Perú</p> -->
       </div>
       <div id="ms_image_container" class="ms-image-container" data-aos="fade-right" data-aos-duration="1000">
         <div id="ms_image" class="ms-image"></div>
       </div>
 
-      <div id="nav_landing" class="container-nav-landing w3-hide-small" data-aos="fade-right">
+      <div id="nav_landing" class="container-nav-landing w3-hide-small">
         <nav>
           <li id="nav_logo" data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
-                alt="meraki solutions logo" style="height: 50px;"></a></li>
+                alt="meraki solutions logo" style="height: 40px;"></a></li>
+
           <li (click)="changeTopic('app')">Aplicaciones</li>
           <li (click)="changeTopic('bd')">Big Data</li>
-          <li (click)="changeTopic('ml')">Machine Learning</li>
+          <!-- <li (click)="changeTopic('ml')">Machine Learning</li> -->
           <li (click)="changeTopic('web')">Websites</li>
           <li (click)="changeTopic('i2ot')">I2OT</li>
+          <li (click)="changeTopic('us')">Nosotros</li>
         </nav>
       </div>
 
@@ -39,15 +43,17 @@
               style="height: 50px;"></a>
           <span style="flex: auto 1 1"></span>
           <button mat-icon-button [matMenuTriggerFor]="appMenu" style="background: transparent;">
-            <mat-icon>menu</mat-icon>
+            <mat-icon style="color: white;">menu</mat-icon>
           </button>
 
           <mat-menu #appMenu="matMenu">
+
             <button mat-menu-item (click)="changeTopic('app')">Aplicaciones</button>
             <button mat-menu-item (click)="changeTopic('bd')">Big Data</button>
-            <button mat-menu-item (click)="changeTopic('ml')">Machine Learning</button>
+            <!-- <button mat-menu-item (click)="changeTopic('ml')">Machine Learning</button> -->
             <button mat-menu-item (click)="changeTopic('web')">Websites</button>
             <button mat-menu-item (click)="changeTopic('i2ot')">I2OT</button>
+            <button mat-menu-item (click)="changeTopic('us')">Nosotros</button>
           </mat-menu>
         </nav>
       </div>
@@ -62,81 +68,13 @@
   <div class="w3-col s1 m1 l2">
     <p> </p>
   </div>
-  <div class="w3-col s10 m10 l8" style="height: 200vh;">
-    <div id="app_content" *ngIf="content === 'app'">
-      <h2 class="app-bg" data-aos="fade-up">Apps</h2>
-      <div id="app_text" data-aos="fade-up" data-aos-duration="2000">
-        <h3>Nuestras aplicaciones</h3>
-        <p>Somos fanáticos de las herramientas, servicios y productos de Google (Lo que probablemente nos hizo
-          Partners).
-
-          Así que todos nuestros proyectos han sido desarrollados utilizando el ecosistema de Google Cloud.</p>
-
-        <img src="../../assets//images/google cloud.webp" alt="google cloud services">
-
-        <p style="margin: 3em 0;">Y sus principales frameworks para programadores.</p>
-
-        <img src="../../assets//images/frameworks.webp" alt="google cloud services">
-      </div>
-
-
-      <div id="app_image" class="w3-hide-small" data-aos="fade-up" data-aos-duration="1000">
-        <img src="../../assets/images/google-pixel.webp" alt="app image" style="width: 100%;">
-      </div>
-
-      <div id="app_projects" data-aos="fade-up" data-aos-duration="2000">
-        <h2 class="app-bg">Works</h2>
-        <ul id="app_projects_list">
-          <li (mouseenter)="changeAppProjectImage(0)"><span>017</span> Delivery Mandaditos Arequipa</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>016</span> Control de standard jobs</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>015</span> Almacenes utillajes</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>014</span> Almacenes WIP</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>013</span> Gestión de lavado interno</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>012</span> Predictor de demanda semanal</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>011</span> Realidad Aumentada Utilización</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>010</span> Aplicación Runner</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>009</span> Almacenes fuera de servicio</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>008</span> Predictor de demanda anual</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>007</span> Generador de tarjetas</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>006</span> Gestión de herramientas</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>005</span> Utilización de equipos</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>004</span> Sistema ERP Interiores</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>003</span> Sistema de gestión CRC La Joya</li>
-          <li (mouseenter)="changeAppProjectImage(1)"><span>002</span> MS Softinvent</li>
-          <li (mouseenter)="changeAppProjectImage(0)"><span>001</span> MS Softhotel</li>
-        </ul>
-
-        <div id="app_projects_image">
-          <!-- <img src="../../assets/images/projects-frame.jpg" alt="project image"> -->
-        </div>
-
-      </div>
-
-
-
-
-
-
-    </div>
-
-
-    <div id="bd_content" *ngIf="content === 'bd'">
-      Hola Big Data
-    </div>
-    <!--
-    <div id="ms_machine_learning_content">
-      Hola Machine Learning
-    </div>
-
-    <div id="ms_websites_content">
-      Hola Websites
-    </div>
-
-    <div id="ms_i2ot_content">
-      Hola I2OT
-    </div> -->
+  <div class="w3-col s10 m10 l8">
+    <router-outlet></router-outlet>
   </div>
   <div class="w3-col s1 m1 l2">
     <p> </p>
   </div>
 </div>
+
+<app-footer></app-footer>
+   

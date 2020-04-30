@@ -121,3 +121,7 @@ p {
          transform: rotate(360deg);
      }
  }
+
+ .mat-form-field-empty .mat-form-field-label {
+    color: #c4c4c4;
+  }

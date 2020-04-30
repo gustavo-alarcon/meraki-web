@@ -15,8 +15,8 @@ const routes: Routes = [
       }
     ],
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home/applications', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home/applications', pathMatch: 'full' }
 ];
 
 @NgModule({

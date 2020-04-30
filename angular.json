@@ -123,9 +123,16 @@
               "devServerTarget": "meraki-web:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "meraki-web"
+  "defaultProject": "meraki-web",
+  "cli": {
+    "analytics": "1c6d2bc5-683d-4b19-b293-2127e9813327"
+  }
 }
